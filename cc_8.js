@@ -40,8 +40,8 @@ calculateRentalCost(5, "Luxury", false); // Expected output: "Total Rental Cost:
 //Task 5 Returning Values
 
 function calculateLoanPayment(principal, rate, time){
-    let loanpayment=principal + (principal * rate * time)
-    console.log(`Total Payment:$${(loanpayment).toFixed(2)}`)
-};
+    let loanpayment=principal + (principal * rate * time);//calculate loanpayment
+    console.log(`Total Payment:$${(loanpayment).toFixed(2)}`);//log total payment
+};//function for loan payment
 calculateLoanPayment(1000, 0.05, 2); // Expected output: "Total Payment: $1100.00"
 calculateLoanPayment(5000, 0.07, 3); // Expected output: "Total Payment: $6050.00"
