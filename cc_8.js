@@ -25,3 +25,14 @@ function calculateServiceFee(amount, serviceType){
 
 calculateServiceFee(200, "Premium"); // Expected output: "Service Fee: $30.00"
 calculateServiceFee(500, "Standard"); // Expected output: "Service Fee: $50.00"
+
+//Task 4 Parameters and Arguments
+
+function calculateRentalCost(days, carType, insurance = false){
+    let carTypeCost={"Economy":40,"Standard":60,"Luxury":100};//add cost for car type
+    let insuranceCost={true:20*days,false:0};//add insurance cost
+    let totalRentalCost=(days*carTypeCost[carType]+insuranceCost[insurance]);//calculate total cost
+    console.log(`Total Rental Cost:$${totalRentalCost}`);//log total cost
+};//create function for rental cost
+calculateRentalCost(3, "Economy", true); // Expected output: "Total Rental Cost: $180"
+calculateRentalCost(5, "Luxury", false); // Expected output: "Total Rental Cost: $500"
