@@ -59,3 +59,18 @@ filterLargeTransactions(transactions, amount => amount > 1000 ? amount: filterLa
 
 ///!!!!!!!!!!!!figure out how to get rid of true/false
 
+//Task 7 Closures
+
+function createCartTracker(){
+    let totalCart=0;
+    return function(cart){
+        totalCart+=cart;//calculate running total
+        return `Total Cart Value:$${totalCart}`;//log cart value
+    };
+};//create function to keep running balance of cart
+
+let cart = createCartTracker();
+console.log(cart(20)); // Expected output: "Total Cart Value: $20"
+console.log(cart(35)); // Expected output: "Total Cart Value: $55"
+
+//
