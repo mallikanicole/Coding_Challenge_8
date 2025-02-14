@@ -50,11 +50,11 @@ calculateLoanPayment(5000, 0.07, 3); // Expected output: "Total Payment: $6050.0
 
 function filterLargeTransactions(transactions, filterFunction){
     let largeTransactions=transactions.map(filterFunction);
-    console.log(${largeTransactions})
+    console.log(largeTransactions)
 }
 
 let transactions = [200, 1500, 3200, 800, 2500];
-filterLargeTransactions(transactions, amount => amount > 1000);
+filterLargeTransactions(transactions, amount => amount > 1000 ? amount: filterLargeTransactions);
 // Expected output: [1500, 3200, 2500]
 
 ///!!!!!!!!!!!!figure out how to get rid of true/false
