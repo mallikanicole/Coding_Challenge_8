@@ -77,6 +77,5 @@ function calculateSavings(years, amount){
     if (years>=10) return 0;
     return calculateSavings=(years*.05);
 }
-
 console.log(`Projected Savings:$${calculateSavings(8, 1000)}`); // Expected output: "Projected Savings: $1102.50"
 console.log(`Projected Savings:$${calculateSavings(5, 5000)}`); // Expected output: "Projected Savings: $6381.41"
