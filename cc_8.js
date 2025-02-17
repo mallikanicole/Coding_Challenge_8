@@ -73,9 +73,12 @@ console.log(cart(20)); // Expected output: "Total Cart Value: $20"
 console.log(cart(35)); // Expected output: "Total Cart Value: $55"
 
 //Task 8 Recursion in Javascript
-function calculateSavings(years, amount){
-    if (years>=10) return 0;
-    return calculateSavings=(years*.05);
-}
-console.log(`Projected Savings:$${calculateSavings(8, 1000)}`); // Expected output: "Projected Savings: $1102.50"
-console.log(`Projected Savings:$${calculateSavings(5, 5000)}`); // Expected output: "Projected Savings: $6381.41"
+
+
+function calculateSavings(years, savings){
+    if(years>=10) return savings;
+    return calculateSavings(years+1,savings*1.05);
+};//create function to calculate projected savings
+
+console.log(`Projected Savings:$${calculateSavings(8, 1000).toFixed(2)}`); // Expected output: "Projected Savings: $1102.50"
+console.log(`Projected Savings:$${calculateSavings(5, 5000).toFixed(2)}`); // Expected output: "Projected Savings: $6381.41"
