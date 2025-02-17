@@ -48,16 +48,15 @@ calculateLoanPayment(5000, 0.07, 3); // Expected output: "Total Payment: $6050.0
 
 //Task 6 Higher Order Functions
 
-function filterLargeTransactions(transactions, filterFunction){
-    let largeTransactions=transactions.map(filterFunction);
-    console.log(largeTransactions)
-}
+let transactions = [200, 1500, 3200, 800, 2500];//declare transactions
 
-let transactions = [200, 1500, 3200, 800, 2500];
-filterLargeTransactions(transactions, amount => amount > 1000 ? amount: filterLargeTransactions);
+function filterLargeTransactions(transactions, filterFunction){
+    return transactions.filter(filterFunction);
+}//create filter function
+let largeTransactions=filterLargeTransactions(transactions,transaction=>transaction>1000);//filter over 1000
+console.log(`Large Transactions:${largeTransactions}`);//log transactions over 1000
 // Expected output: [1500, 3200, 2500]
 
-///!!!!!!!!!!!!figure out how to get rid of true/false
 
 //Task 7 Closures
 
@@ -73,4 +72,11 @@ let cart = createCartTracker();
 console.log(cart(20)); // Expected output: "Total Cart Value: $20"
 console.log(cart(35)); // Expected output: "Total Cart Value: $55"
 
-//
+//Task 8 Recursion in Javascript
+function calculateSavings(years, amount){
+    if (years>=10) return 0;
+    return calculateSavings=(years*.05);
+}
+
+console.log(`Projected Savings:$${calculateSavings(8, 1000)}`); // Expected output: "Projected Savings: $1102.50"
+console.log(`Projected Savings:$${calculateSavings(5, 5000)}`); // Expected output: "Projected Savings: $6381.41"
